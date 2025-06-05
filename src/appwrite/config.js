@@ -21,7 +21,7 @@ export class Service {
                 conf.appCollectionId,
                 documentId, // Use the generated documentId as the slug
                 {
-                    content, Title: title, featuredImage, status, userId
+                    content, title: title, featuredImage, status, userId
                 }
             );
         } catch (error) {
@@ -106,7 +106,7 @@ export class Service {
         }
     }
     getFilePreview(fileId) {   //In the context of files or documents, a "preview" typically refers to a smaller, simplified, or condensed version of the original content that gives users a glimpse or overview of what the full content entails. 
-        return this.bucket.getFilePreview(
+        return this.bucket.getFileView(
             conf.appBucketId,
             fileId
         )
